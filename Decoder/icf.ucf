@@ -1,0 +1,12 @@
+NET "i0" LOC="L13";
+NET "i1" LOC="L14";
+NET "i2" LOC="H18";
+
+NET "o0" LOC="F12";
+NET "o1" LOC="E12";
+NET "o2" LOC="E11";
+NET "o3" LOC="F11";
+NET "o4" LOC="C11";
+NET "o5" LOC="D11";
+NET "o6" LOC="E9";
+NET "o7" LOC="F9";
