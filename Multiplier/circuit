@@ -1,0 +1,83 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x12c7730 .scope module, "TB" "TB" 2 78;
+ .timescale -9 -12;
+v0x1312ba0_0 .var "a0", 0 0;
+v0x1312c40_0 .var "a1", 0 0;
+v0x1312cf0_0 .var "b0", 0 0;
+v0x1312da0_0 .var "b1", 0 0;
+v0x1312e80_0 .net "o0", 0 0, L_0x1313110; 1 drivers
+v0x1312f30_0 .net "o1", 0 0, L_0x1313520; 1 drivers
+v0x1312fb0_0 .net "o2", 0 0, L_0x1313670; 1 drivers
+v0x1313060_0 .net "o3", 0 0, L_0x1313420; 1 drivers
+S_0x12c7820 .scope module, "uut" "MULT" 2 88, 3 43, S_0x12c7730;
+ .timescale -9 -12;
+L_0x1313110 .functor AND 1, v0x1312ba0_0, v0x1312cf0_0, C4<1>, C4<1>;
+L_0x1313260 .functor AND 1, v0x1312ba0_0, v0x1312da0_0, C4<1>, C4<1>;
+L_0x1313310 .functor AND 1, v0x1312c40_0, v0x1312cf0_0, C4<1>, C4<1>;
+L_0x13133c0 .functor AND 1, v0x1312c40_0, v0x1312da0_0, C4<1>, C4<1>;
+L_0x1313420 .functor AND 1, L_0x1313110, L_0x13133c0, C4<1>, C4<1>;
+L_0x1313520 .functor XOR 1, L_0x1313260, L_0x1313310, C4<0>, C4<0>;
+L_0x1313670 .functor XOR 1, L_0x13133c0, L_0x1313420, C4<0>, C4<0>;
+v0x12fcb90_0 .net "a0", 0 0, v0x1312ba0_0; 1 drivers
+v0x1312460_0 .net "a1", 0 0, v0x1312c40_0; 1 drivers
+v0x1312500_0 .net "b0", 0 0, v0x1312cf0_0; 1 drivers
+v0x13125a0_0 .net "b1", 0 0, v0x1312da0_0; 1 drivers
+v0x1312650_0 .alias "o0", 0 0, v0x1312e80_0;
+v0x13126f0_0 .alias "o1", 0 0, v0x1312f30_0;
+v0x13127d0_0 .alias "o2", 0 0, v0x1312fb0_0;
+v0x1312870_0 .alias "o3", 0 0, v0x1313060_0;
+v0x1312960_0 .net "s1", 0 0, L_0x1313260; 1 drivers
+v0x1312a00_0 .net "s2", 0 0, L_0x1313310; 1 drivers
+v0x1312b00_0 .net "s3", 0 0, L_0x13133c0; 1 drivers
+    .scope S_0x12c7730;
+T_0 ;
+    %set/v v0x1312ba0_0, 0, 1;
+    %set/v v0x1312c40_0, 0, 1;
+    %set/v v0x1312cf0_0, 0, 1;
+    %set/v v0x1312da0_0, 0, 1;
+    %vpi_call 2 99 "$monitor", "%t %b%b %b%b \012                      %b %b %b %b", $time, v0x1312ba0_0, v0x1312c40_0, v0x1312cf0_0, v0x1312da0_0, v0x1312e80_0, v0x1312f30_0, v0x1312fb0_0, v0x1313060_0;
+    %delay 100000, 0;
+    %set/v v0x1312cf0_0, 1, 1;
+    %delay 50000, 0;
+    %set/v v0x1312da0_0, 1, 1;
+    %delay 50000, 0;
+    %set/v v0x1312cf0_0, 0, 1;
+    %delay 50000, 0;
+    %set/v v0x1312ba0_0, 1, 1;
+    %delay 50000, 0;
+    %set/v v0x1312da0_0, 0, 1;
+    %delay 50000, 0;
+    %set/v v0x1312cf0_0, 1, 1;
+    %delay 50000, 0;
+    %set/v v0x1312da0_0, 1, 1;
+    %delay 50000, 0;
+    %set/v v0x1312c40_0, 1, 1;
+    %delay 50000, 0;
+    %set/v v0x1312cf0_0, 0, 1;
+    %delay 50000, 0;
+    %set/v v0x1312da0_0, 0, 1;
+    %delay 50000, 0;
+    %set/v v0x1312cf0_0, 1, 1;
+    %delay 50000, 0;
+    %set/v v0x1312ba0_0, 0, 1;
+    %delay 50000, 0;
+    %set/v v0x1312da0_0, 1, 1;
+    %delay 50000, 0;
+    %set/v v0x1312cf0_0, 0, 1;
+    %delay 50000, 0;
+    %set/v v0x1312da0_0, 0, 1;
+    %delay 50000, 0;
+    %vpi_call 2 124 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "TB.v";
+    "MULT.v";
